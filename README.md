@@ -1,6 +1,6 @@
 # microBlog
 
-This app is pretty straightforward. Just creating two services (post and comments) with a basic react frontend. It's my foray into microservices. 
+This app is pretty straightforward. Just creating two services (post and comments) with a basic react frontend. It's my foray into microservices. I've left comments throughout the code to explain my process. I won't be using a database so the data will not persist.
 
 Tech used:
 - NodeJS
