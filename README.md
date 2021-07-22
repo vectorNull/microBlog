@@ -19,4 +19,23 @@ Architecture:
 **Goal**: Create new post\
 **Path**: /posts\
 **Method**: POST\
-**Body**: { title: string }
+**Body**: { title: string }\
+\
+**Goal**: Get all posts\
+**Path**: /posts\
+**Method**: GET\
+**Body**: \
+
+## Comment Service
+
+**Goal**: Create a comment associated with the given post ID\
+**Path**: /posts/:id/comments\
+**Method**: POST\
+**Body**: { content: string }\
+\
+**Goal**: Retrieve all comments associated with the given post ID\
+**Path**: /posts/:id/comments\
+**Method**: GET\
+**Body**: \
+
+![arrayOfComments](https://user-images.githubusercontent.com/50179896/126585550-992e07e7-a6e9-4c23-bbbe-cc328e89c47a.png)
