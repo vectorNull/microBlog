@@ -13,6 +13,7 @@ Architecture:
 -   Microservice
 
 
+![microBlogOverviewDiagram](https://user-images.githubusercontent.com/50179896/126586144-415f1776-62e6-41c2-966a-534d464d48ec.png)
 
 ## Post Service
 
