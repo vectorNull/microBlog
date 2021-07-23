@@ -1,10 +1,11 @@
 const express = require("express");
 // const bodyParser = require('body-parser') // As of Express 4.16.0+, body-parser is part of Express; no longer needed.
 const { randomBytes } = require("crypto"); //Using this module to create a random ID for each post
+const cors = require('cors')
 
 const app = express();
 app.use(express.json()) // use this instead of body-parser
-
+app.use(cors());
 // Using this empty object to store my posts
 const posts = {};
 
