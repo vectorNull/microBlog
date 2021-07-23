@@ -10,7 +10,7 @@ Tech used:
 
 Architecture:
 
--   Microservice
+-  Basic Microservice
 
 
 ![microBlogOverviewDiagram](https://user-images.githubusercontent.com/50179896/126586144-415f1776-62e6-41c2-966a-534d464d48ec.png)
@@ -40,3 +40,7 @@ Architecture:
 **Body**: \
 
 ![arrayOfComments](https://user-images.githubusercontent.com/50179896/126585550-992e07e7-a6e9-4c23-bbbe-cc328e89c47a.png)
+
+## React Frontend
+
+![reactComponentsMicroBlog](https://user-images.githubusercontent.com/50179896/126728957-e692f82e-d803-4665-afa1-bdc9da390d16.png)
