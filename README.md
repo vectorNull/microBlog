@@ -49,4 +49,14 @@ Architecture:
 
 ## Problem <a name="problem"></a> 
 
-Here is the gist of the problem we are dealing with. It's really a matter of inefficiency.
+Here is the gist of the problem we are dealing with. It's really a matter of inefficiency. Below you picture of the blog in its current state with posts and comments add:
+
+![blogScreenShot](https://user-images.githubusercontent.com/50179896/126859009-139e362c-c67e-4c2b-8762-125701ad7d89.png)
+
+If we look at the list of request made to the comments service we see that **seven GET requests** were made to retrieve the post comments:
+
+![commentServiceRequests](https://user-images.githubusercontent.com/50179896/126859012-b628a0a7-49e8-4d57-a96b-83835260644a.png)
+
+This is our current dilemma: we are making mulitple requests to one service when we could just make one. And this is where an event-driven microservice architecture would come in handy:
+
+![multipleRequestsDiagram](https://user-images.githubusercontent.com/50179896/126859014-4bfd86ed-88ac-480c-86d0-4c98740faf07.png)
