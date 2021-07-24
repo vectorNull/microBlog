@@ -85,3 +85,5 @@ This is our current dilemma: we are making mulitple requests to one service when
 ![synchronousApproach](https://user-images.githubusercontent.com/50179896/126860737-c3746487-ace7-4cc0-a4d0-b5d2b0999051.png)
 
 # Solution 2: Asynchronous Communication Using an Event Bus and Query Service <a name="solution2"></a>
+
+![flameShotAsyncApprach](https://user-images.githubusercontent.com/50179896/126861569-96516526-45ba-4799-9dbb-ade0e15435cb.png)
