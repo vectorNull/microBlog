@@ -87,3 +87,11 @@ This is our current dilemma: we are making mulitple requests to one service when
 # Solution 2: Asynchronous Communication Using an Event Bus and Query Service <a name="solution2"></a>
 
 ![flameShotAsyncApprach](https://user-images.githubusercontent.com/50179896/126861569-96516526-45ba-4799-9dbb-ade0e15435cb.png)
+
+## Pros
+- Query service has zero dependencies on other services
+- Query service wil be extremely fast
+
+## Cons
+- More difficult to understand
+- Data duplication
