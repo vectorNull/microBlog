@@ -17,6 +17,7 @@ Table of Contents:
 
 [Solution 1: Synchronous Communication](#solution1)
 
+
 [Solution 2: Asynchronous Communication Using an Event Bus and Query Service](#solution2)
 
 ---
@@ -81,6 +82,6 @@ This is our current dilemma: we are making mulitple requests to one service when
 
 # Solution 1: Synchronous Communication <a name="solution1"></a>
 
-![synchronousApproach](https://user-images.githubusercontent.com/50179896/126860244-f95974cc-30e5-4729-b550-26f7f49902b3.png)
+![synchronousApproach](https://user-images.githubusercontent.com/50179896/126860737-c3746487-ace7-4cc0-a4d0-b5d2b0999051.png)
 
 # Solution 2: Asynchronous Communication Using an Event Bus and Query Service <a name="solution2"></a>
