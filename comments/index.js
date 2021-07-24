@@ -8,6 +8,10 @@ app.use(express.json());
 app.use(cors());
 const commentsByPostId = {};
 
+process.on("uncaughtException", (err) => {
+    console.log(err);
+});
+
 app.get("/posts/:id/comments", (req, res) => {
     res.send(commentsByPostId[req.params.id] || []);
 });
@@ -23,7 +27,7 @@ app.post("/posts/:id/comments", async (req, res) => {
     commentsByPostId[req.params.id] = comments;
 
     await axios.post('http://localhost:4005/events', {
-        type: CommentCreated,
+        type: "CommentCreated",
         data: {
             id: commentId,
             content,
