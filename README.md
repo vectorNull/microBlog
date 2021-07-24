@@ -1,6 +1,8 @@
 # microBlog
 
-This app is pretty straightforward. Just creating two services (post and comments) with a basic react frontend. It's my foray into microservices. I've left comments throughout the code to explain my process. I won't be using a database so the data will not persist.
+This app is pretty straightforward. Just creating two services (post and comments) with a basic react frontend. It's my foray into microservices. I won't be using a database so the data will not persist. 
+
+Go [here](#problem) to understand the problem I am trying to address.
 
 Tech used:
 
@@ -10,7 +12,7 @@ Tech used:
 
 Architecture:
 
--  Basic Microservice
+-  Microservice
 
 
 ![microBlogOverviewDiagram](https://user-images.githubusercontent.com/50179896/126586144-415f1776-62e6-41c2-966a-534d464d48ec.png)
@@ -44,3 +46,5 @@ Architecture:
 ## React Frontend
 
 ![reactComponentsMicroBlog](https://user-images.githubusercontent.com/50179896/126728957-e692f82e-d803-4665-afa1-bdc9da390d16.png)
+
+## Problem <a name="problem"></a> 
