@@ -1,10 +1,11 @@
 const express = require("express");
 // const bodyParser = require('body-parser') // As of Express 4.16.0+, body-parser is part of Express; no longer needed.
 const { randomBytes } = require("crypto"); //Using this module to create a random ID for each post
-const cors = require('cors')
+const cors = require("cors");
+const axios = require("axios");
 
 const app = express();
-app.use(express.json()) // use this instead of body-parser
+app.use(express.json()); // use this instead of body-parser
 app.use(cors());
 // Using this empty object to store my posts
 const posts = {};
@@ -14,7 +15,7 @@ app.get("/posts", (req, res) => {
     res.send(posts);
 });
 
-app.post("/posts", (req, res) => {
+app.post("/posts", async (req, res) => {
     // Let's generate a random id for each post that's 4 bytes long and in hexadecimal
     const id = randomBytes(4).toString("hex");
     const { title } = req.body;
@@ -25,11 +26,24 @@ app.post("/posts", (req, res) => {
         title,
     };
 
+    await axios.post("http://localhost:4005/events", {
+        type: "PostCreated",
+        data: {
+            id,
+            title,
+        },
+    });
+
     // Let the user know that we recevied the post along with the post[id]
     res.status(201).send(posts[id]);
 });
 
+app.post('/events', (req, res) => {
+    console.log('Received event', req.body.type);
+    res.send({})
+})
+
 // I'm having this service listen on port 4000
 app.listen(4000, () => {
-    console.log("Listening on 4000");
+    console.log("Post service listening on 4000");
 });
