@@ -27,7 +27,7 @@ Architecture:
 **Goal**: Get all posts\
 **Path**: /posts\
 **Method**: GET\
-**Body**: \
+**Body**: none
 
 ## Comment Service
 
@@ -39,7 +39,7 @@ Architecture:
 **Goal**: Retrieve all comments associated with the given post ID\
 **Path**: /posts/:id/comments\
 **Method**: GET\
-**Body**: \
+**Body**: none
 
 ![arrayOfComments](https://user-images.githubusercontent.com/50179896/126585550-992e07e7-a6e9-4c23-bbbe-cc328e89c47a.png)
 
