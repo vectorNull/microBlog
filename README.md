@@ -48,3 +48,5 @@ Architecture:
 ![reactComponentsMicroBlog](https://user-images.githubusercontent.com/50179896/126728957-e692f82e-d803-4665-afa1-bdc9da390d16.png)
 
 ## Problem <a name="problem"></a> 
+
+Here is the gist of the problem we are dealing with. It's really a matter of inefficiency.
