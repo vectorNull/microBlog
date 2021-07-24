@@ -7,6 +7,10 @@ const axios = require("axios");
 const app = express();
 app.use(express.json()); // use this instead of body-parser
 app.use(cors());
+
+process.on("uncaughtException", (err) => {
+    console.log(err);
+});
 // Using this empty object to store my posts
 const posts = {};
 
