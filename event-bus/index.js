@@ -6,7 +6,7 @@ app.use(express.json());
 
 process.on("uncaughtException", (err) => {
     console.log(err);
-})
+});
 
 app.post("/events", (req, res) => {
     console.log(req.body);
@@ -27,6 +27,7 @@ app.post("/events", (req, res) => {
     // Moderation Service
     axios.post("http://localhost:4003/events", event).catch((err) => {
         console.log(err.message);
+    });
 
     res.send({ status: "OK" });
 });
