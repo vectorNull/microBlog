@@ -4,7 +4,7 @@ const cors = require("cors");
 const axios = require("axios");
 
 const app = express();
-app.use(express.json()); // use this instead of body-parser
+app.use(express.json());
 app.use(cors());
 
 process.on("uncaughtException", (err) => {
@@ -38,10 +38,11 @@ app.post("/posts", async (req, res) => {
 });
 
 app.post("/events", (req, res) => {
-    console.log("Received event", req.body.type);
+    console.log("Received Event", req.body.type);
+
     res.send({});
 });
 
 app.listen(4000, () => {
-    console.log("Post service listening on 4000");
+    console.log("Listening on 4000");
 });

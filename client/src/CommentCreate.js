@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import axios from 'axios'
+import axios from "axios";
 
-export default ({ postId }) => {
+const CommentCreate = ({ postId }) => {
     const [content, setContent] = useState("");
 
     const onSubmit = async (event) => {
         event.preventDefault();
 
         await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
-            content
-        })
+            content,
+        });
 
-        setContent('')
-    }
+        setContent("");
+    };
 
     return (
         <div>
@@ -30,3 +30,5 @@ export default ({ postId }) => {
         </div>
     );
 };
+
+export default CommentCreate;

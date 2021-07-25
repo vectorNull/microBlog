@@ -6,6 +6,7 @@ const axios = require("axios");
 const app = express();
 app.use(express.json());
 app.use(cors());
+
 const commentsByPostId = {};
 
 process.on("uncaughtException", (err) => {
@@ -35,13 +36,15 @@ app.post("/posts/:id/comments", async (req, res) => {
             status: "pending",
         },
     });
+
     res.status(201).send(comments);
 });
 
 app.post("/events", async (req, res) => {
-    console.log("Received event", req.body.type);
+    console.log("Event Received:", req.body.type);
 
     const { type, data } = req.body;
+
     if (type === "CommentModerated") {
         const { postId, id, status, content } = data;
         const comments = commentsByPostId[postId];
@@ -66,5 +69,5 @@ app.post("/events", async (req, res) => {
 });
 
 app.listen(4001, () => {
-    console.log("Comments service listening on 4001");
+    console.log("Listening on 4001");
 });
