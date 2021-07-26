@@ -17,8 +17,9 @@ Table of Contents:
 
 [Solution 1: Synchronous Communication](#solution1)
 
-
 [Solution 2: Asynchronous Communication Using an Event Bus and Query Service](#solution2)
+
+[Event Bus](#eventBus) 
 
 ---
 
@@ -35,6 +36,8 @@ Architecture:
 # Overview of Application and Services <a name="overview"></a> 
 
 ![microBlogOverviewDiagram](https://user-images.githubusercontent.com/50179896/126586144-415f1776-62e6-41c2-966a-534d464d48ec.png)
+
+# List of Services
 
 ## Post Service
 
@@ -61,6 +64,14 @@ Architecture:
 **Body**: none
 
 ![arrayOfComments](https://user-images.githubusercontent.com/50179896/126585550-992e07e7-a6e9-4c23-bbbe-cc328e89c47a.png)
+
+## Query Service
+
+## Moderation Service
+
+## Event Broker
+
+
 
 ## React Frontend
 
@@ -96,7 +107,7 @@ This is our current dilemma: we are making mulitple requests to one service when
 - More difficult to understand
 - Data duplication
 
-# Event Bus
+# Event Bus <a name="eventBus"></a>
 
 There are several implementations, including:
 - RabbitMQ
