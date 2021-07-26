@@ -24,6 +24,8 @@ Table of Contents:
 
 [Event Bus](#eventBus) 
 
+[Why I used Docker?](#docker)
+
 ---
 
 Tech used:
@@ -127,10 +129,12 @@ Obviously, this does not deal with the data duplication problem. But that is not
 
 ![finalMicroBlogLayout](https://user-images.githubusercontent.com/50179896/126918427-fed3c5e4-6052-41c0-95a3-b03b77fd0842.png)
 
-# Why I used Docker?
+# Why I used Docker? <a name="docker"></a>
 
 This is obviously a small application and in the real world this architecture choice would be overkill. But for the sake of learning, I also chose to use Docker for two primary reasons:
 - Running this app make some pretty big assumptions about our environment. These include the assumption the Node is installed on the system
 - Running this app requires precise knowledge of how to start it (npm start)
+
+![dockerLayout](https://user-images.githubusercontent.com/50179896/127038956-1fde00c7-2266-4f7c-a103-414a2368ba9b.png)
 
 In a real-world app of this type, complexity would be compounded. In order to use this app for learning purposes, I opted to containerize them with Docker, which will make it easier for anyone wanting to run the app on their own machines. Docker wraps every dependency needed to run the application in a nice little box.
