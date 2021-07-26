@@ -30,6 +30,3 @@ app.listen(4003, () => {
     console.log("Listening on 4003");
 });
 
-app.listen(4003, () => {
-    console.log("Moderation service listening on 4003");
-});
