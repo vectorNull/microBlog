@@ -119,3 +119,7 @@ In this app, I'll build a very basic Event Bus from scratch using Express. This 
 Whenever a POST request is made to the Post Service, Comments Service, or Query Service, the particular service will then forward that request to the Event Bus. In turn, the Event Bus will then forward the request with all of its data to all 3 services while at the same time storing the event. That's it. As I said, this is a very basic implementation. A more thorough, production-grade implementation will come in a future project.
 
 Obviously, this does not deal with the data duplication problem. But that is not the intention here. There are tools available to address this issue.
+
+# Final Layout
+
+![finalMicroBlogLayout](https://user-images.githubusercontent.com/50179896/126918427-fed3c5e4-6052-41c0-95a3-b03b77fd0842.png)
