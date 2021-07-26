@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/architecture-eventDriven-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-microservice-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 
-This app is pretty straightforward. Just creating two services (post and comments) with a basic react frontend. It's my foray into microservices. I won't be using a database so the data will not persist.
+I used this application to learn the fundamentals of microservices. I implemented 4 different services using an event-driven architecture and a small React frontend. For more details about design and implementation choices, see below.
 
 ---
 
