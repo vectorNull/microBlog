@@ -11,7 +11,7 @@ This app is pretty straightforward. Just creating two services (post and comment
 
 Table of Contents:
 
-[Overview](#overview)
+[Overview of Application and Services](#overview)
 
 [Problem](#problem) 
 
@@ -66,12 +66,10 @@ Architecture:
 ![arrayOfComments](https://user-images.githubusercontent.com/50179896/126585550-992e07e7-a6e9-4c23-bbbe-cc328e89c47a.png)
 
 ## Query Service
+![queryService](https://user-images.githubusercontent.com/50179896/127032734-e0372fb1-cd46-4c71-9db9-22a32c8c469d.png)
 
 ## Moderation Service
-
-## Event Broker
-
-
+The moderation service will consume events as they are submitted by the user. It wil first receive a ComentCreated event, use a terniary operator to determine if a particular word is found in the content property (in this case, the word 'guac'; I don't like guac ;) ). If so, it will update the status property to rejected. If not, the status property will be set to approved. Next, it will emit a CommentModerated event to the Event Broker which will then pass it on to the Query Service.
 
 ## React Frontend
 
