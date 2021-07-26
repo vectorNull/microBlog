@@ -4,14 +4,17 @@
 ![](https://img.shields.io/badge/API-REST-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-eventDriven-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-microservice-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
+![](https://img.shields.io/badge/containers-docker-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
+![](https://img.shields.io/badge/orchestration-kubernetes-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 
-This app is pretty straightforward. Just creating two services (post and comments) with a basic react frontend. It's my foray into microservices. I won't be using a database so the data will not persist.
+
+I used this application to learn the fundamentals of microservices. I implemented 4 different services using an event-driven architecture and a small React frontend. Docker and Kubernetes was used for containerization and orchestration. For more details about design and implementation choices, see below.
 
 ---
 
 Table of Contents:
 
-[Overview](#overview)
+[Overview of Application and Services](#overview)
 
 [Problem](#problem) 
 
@@ -28,6 +31,8 @@ Tech used:
 -   NodeJS
 -   Express
 -   React
+-   Docker
+-   Kubernetes
 
 Architecture:
 
@@ -66,12 +71,10 @@ Architecture:
 ![arrayOfComments](https://user-images.githubusercontent.com/50179896/126585550-992e07e7-a6e9-4c23-bbbe-cc328e89c47a.png)
 
 ## Query Service
+![queryService](https://user-images.githubusercontent.com/50179896/127032734-e0372fb1-cd46-4c71-9db9-22a32c8c469d.png)
 
 ## Moderation Service
-
-## Event Broker
-
-
+The moderation service will consume events as they are submitted by the user. It wil first receive a ComentCreated event, use a terniary operator to determine if a particular word is found in the content property (in this case, the word 'guac'; I don't like guac ;) ). If so, it will update the status property to rejected. If not, the status property will be set to approved. Next, it will emit a CommentModerated event to the Event Broker which will then pass it on to the Query Service.
 
 ## React Frontend
 
@@ -119,3 +122,7 @@ In this app, I'll build a very basic Event Bus from scratch using Express. This 
 Whenever a POST request is made to the Post Service, Comments Service, or Query Service, the particular service will then forward that request to the Event Bus. In turn, the Event Bus will then forward the request with all of its data to all 3 services while at the same time storing the event. That's it. As I said, this is a very basic implementation. A more thorough, production-grade implementation will come in a future project.
 
 Obviously, this does not deal with the data duplication problem. But that is not the intention here. There are tools available to address this issue.
+
+# Final Layout
+
+![finalMicroBlogLayout](https://user-images.githubusercontent.com/50179896/126918427-fed3c5e4-6052-41c0-95a3-b03b77fd0842.png)
