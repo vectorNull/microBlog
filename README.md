@@ -4,8 +4,11 @@
 ![](https://img.shields.io/badge/API-REST-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-eventDriven-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-microservice-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
+![](https://img.shields.io/badge/containers-docker-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
+![](https://img.shields.io/badge/orchestration-kubernetes-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 
-I used this application to learn the fundamentals of microservices. I implemented 4 different services using an event-driven architecture and a small React frontend. For more details about design and implementation choices, see below.
+
+I used this application to learn the fundamentals of microservices. I implemented 4 different services using an event-driven architecture and a small React frontend. Docker and Kubernetes was used for containerization and orchestration. For more details about design and implementation choices, see below.
 
 ---
 
@@ -28,6 +31,8 @@ Tech used:
 -   NodeJS
 -   Express
 -   React
+-   Docker
+-   Kubernetes
 
 Architecture:
 
