@@ -37,6 +37,7 @@ Tech used:
 -   React
 -   Docker
 -   Kubernetes
+-   Ingress-Nginx (creates both a Load Balancer and an Ingress)
 
 Architecture:
 
@@ -160,3 +161,5 @@ In a real-world app of this type, complexity would be compounded. In order to us
 ## Load Balancer <a name="loadbalancer"></a>
 
 ![loadbalancerLayout](https://user-images.githubusercontent.com/50179896/127217064-e0e1f8fd-ec5a-4294-b90d-688ea670f567.png)
+
+The Load Balancer Service will reach out to its provider and provision a load balancer. It gets traffic into a **single pod**. Technically speaking, we will also have an ingress controller which will have a set of routes to direct traffic to different services. The config file used to provision the load balancer has a set of instruction to reach out to some provider (Google, Asure, Amazon, etc) and it is that provider which will provision the load balancer for us.
