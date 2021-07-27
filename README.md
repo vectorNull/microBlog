@@ -26,6 +26,8 @@ Table of Contents:
 
 [Why I used Docker?](#docker)
 
+[Kubernetes](#kubernetes)
+
 ---
 
 Tech used:
@@ -138,3 +140,7 @@ This is obviously a small application and in the real world this architecture ch
 ![dockerLayout](https://user-images.githubusercontent.com/50179896/127038956-1fde00c7-2266-4f7c-a103-414a2368ba9b.png)
 
 In a real-world app of this type, complexity would be compounded. In order to use this app for learning purposes, I opted to containerize them with Docker, which will make it easier for anyone wanting to run the app on their own machines. Docker wraps every dependency needed to run the application in a nice little box.
+
+# Kubernetes <a name="kubernetes"></a>
+
+![KubernetesCluster](https://user-images.githubusercontent.com/50179896/127077102-1bb74b4b-334b-4512-b530-6b9669ce7b9a.png)
