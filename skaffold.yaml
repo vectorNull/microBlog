@@ -17,7 +17,7 @@ build:
                   - src: "src/**/*.js"
                     dest: .
         - image: vectornull/comments
-          context: comment
+          context: comments
           docker:
               dockerfile: Dockerfile
           sync:
