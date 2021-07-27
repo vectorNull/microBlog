@@ -1,12 +1,10 @@
 # microBlog
 
-
 ![](https://img.shields.io/badge/API-REST-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-eventDriven-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-microservice-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/containers-docker-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/orchestration-kubernetes-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
-
 
 I used this application to learn the fundamentals of microservices. I implemented 4 different services using an event-driven architecture and a small React frontend. Docker and Kubernetes was used for containerization and orchestration. For more details about design and implementation choices, see below.
 
@@ -16,13 +14,13 @@ Table of Contents:
 
 [Overview of Application and Services](#overview)
 
-[Problem](#problem) 
+[Problem](#problem)
 
 [Solution 1: Synchronous Communication](#solution1)
 
 [Solution 2: Asynchronous Communication Using an Event Bus and Query Service](#solution2)
 
-[Event Bus](#eventBus) 
+[Event Bus](#eventBus)
 
 [Why I used Docker?](#docker)
 
@@ -40,9 +38,9 @@ Tech used:
 
 Architecture:
 
--  Microservice
+-   Microservice
 
-# Overview of Application and Services <a name="overview"></a> 
+# Overview of Application and Services <a name="overview"></a>
 
 ![microBlogOverviewDiagram](https://user-images.githubusercontent.com/50179896/126586144-415f1776-62e6-41c2-966a-534d464d48ec.png)
 
@@ -75,16 +73,18 @@ Architecture:
 ![arrayOfComments](https://user-images.githubusercontent.com/50179896/126585550-992e07e7-a6e9-4c23-bbbe-cc328e89c47a.png)
 
 ## Query Service
+
 ![queryService](https://user-images.githubusercontent.com/50179896/127032734-e0372fb1-cd46-4c71-9db9-22a32c8c469d.png)
 
 ## Moderation Service
+
 The moderation service will consume events as they are submitted by the user. It wil first receive a ComentCreated event, use a terniary operator to determine if a particular word is found in the content property (in this case, the word 'guac'; I don't like guac ;) ). If so, it will update the status property to rejected. If not, the status property will be set to approved. Next, it will emit a CommentModerated event to the Event Broker which will then pass it on to the Query Service.
 
 ## React Frontend
 
 ![reactComponentsMicroBlog](https://user-images.githubusercontent.com/50179896/126728957-e692f82e-d803-4665-afa1-bdc9da390d16.png)
 
-# Problem <a name="problem"></a> 
+# Problem <a name="problem"></a>
 
 Here is the gist of the problem we are dealing with. It's really a matter of inefficiency. Below you picture of the blog in its current state with posts and comments add:
 
@@ -107,19 +107,22 @@ This is our current dilemma: we are making mulitple requests to one service when
 ![flameShotAsyncApprach](https://user-images.githubusercontent.com/50179896/126861569-96516526-45ba-4799-9dbb-ade0e15435cb.png)
 
 ## Pros
-- Query service has zero dependencies on other services
-- Query service wil be extremely fast
+
+-   Query service has zero dependencies on other services
+-   Query service wil be extremely fast
 
 ## Cons
-- More difficult to understand
-- Data duplication
+
+-   More difficult to understand
+-   Data duplication
 
 # Event Bus <a name="eventBus"></a>
 
 There are several implementations, including:
-- RabbitMQ
-- Kafka
-- NATS...
+
+-   RabbitMQ
+-   Kafka
+-   NATS...
 
 In this app, I'll build a very basic Event Bus from scratch using Express. This is not going to be a production-grade bus.
 
@@ -134,8 +137,9 @@ Obviously, this does not deal with the data duplication problem. But that is not
 # Why I used Docker? <a name="docker"></a>
 
 This is obviously a small application and in the real world this architecture choice would be overkill. But for the sake of learning, I also chose to use Docker for two primary reasons:
-- Running this app make some pretty big assumptions about our environment. These include the assumption the Node is installed on the system
-- Running this app requires precise knowledge of how to start it (npm start)
+
+-   Running this app make some pretty big assumptions about our environment. These include the assumption the Node is installed on the system
+-   Running this app requires precise knowledge of how to start it (npm start)
 
 ![dockerLayout](https://user-images.githubusercontent.com/50179896/127038956-1fde00c7-2266-4f7c-a103-414a2368ba9b.png)
 
@@ -144,3 +148,9 @@ In a real-world app of this type, complexity would be compounded. In order to us
 # Kubernetes <a name="kubernetes"></a>
 
 ![KubernetesCluster](https://user-images.githubusercontent.com/50179896/127077102-1bb74b4b-334b-4512-b530-6b9669ce7b9a.png)
+
+## Kubernetes Config Files
+
+-   Tells Kubernetes about the different Deployments, Pods, and Services (referred to as 'Objects') that I will create.
+-   Written in YAML syntax
+-   I will always store these files with our project source code because they are a form of **documentation**
