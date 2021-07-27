@@ -13,6 +13,7 @@ process.on("uncaughtException", (err) => {
 
 const posts = {};
 
+// Left in for testing purposes; no longer needed
 app.get("/posts", (req, res) => {
     res.send(posts);
 });
