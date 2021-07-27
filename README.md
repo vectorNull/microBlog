@@ -26,6 +26,8 @@ Table of Contents:
 
 [Kubernetes](#kubernetes)
 
+[Load Balancer Service](#loadbalancer)
+
 ---
 
 Tech used:
@@ -154,3 +156,7 @@ In a real-world app of this type, complexity would be compounded. In order to us
 -   Tells Kubernetes about the different Deployments, Pods, and Services (referred to as 'Objects') that I will create.
 -   Written in YAML syntax
 -   I will always store these files with our project source code because they are a form of **documentation**
+
+## Load Balancer <a name="loadbalancer"></a>
+
+![loadbalancerLayout](https://user-images.githubusercontent.com/50179896/127217064-e0e1f8fd-ec5a-4294-b90d-688ea670f567.png)
