@@ -19,3 +19,17 @@ spec:
 # Run the following in terminal window before applying deployment (posts-depl.yaml). You might have to rebuild your docker image.
 # eval $(minikube docker-env)
 # kubectl apply -f posts-depl.yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: posts-clusterip-srv
+spec:
+    selector:
+        app: posts
+    type: ClusterIP
+    ports:
+        - name: posts
+          protocol: TCP
+          port: 4000
+          targetPort: 4000
