@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: posts-depl
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: posts
+    template:
+        metadata:
+            labels:
+                app: posts
+        spec:
+            containers:
+                - name: posts
+                  image: vectornull/posts:0.0.5
+                  imagePullPolicy: IfNotPresent
+# Run the following in terminal window before applying deployment (posts-depl.yaml). You might have to rebuild your docker image.
+# eval $(minikube docker-env)
+# kubectl apply -f posts-depl.yaml
