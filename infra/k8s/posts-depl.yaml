@@ -17,6 +17,7 @@ spec:
                   image: vectornull/posts
                   imagePullPolicy: IfNotPresent
 # Run the following in terminal window before applying deployment (posts-depl.yaml). You might have to rebuild your docker image.
+# minikube start --driver=virtualbox
 # eval $(minikube docker-env)
 # kubectl apply -f posts-depl.yaml
 ---
