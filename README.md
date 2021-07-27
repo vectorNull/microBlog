@@ -38,6 +38,7 @@ Tech used:
 -   Docker
 -   Kubernetes
 -   Ingress-Nginx (creates both a Load Balancer and an Ingress)
+-   Skaffold (for updating code in running pod and creating/deleting k8s objects)
 
 Architecture:
 
